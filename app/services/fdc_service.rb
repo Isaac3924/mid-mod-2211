@@ -1,11 +1,11 @@
 class FdcService 
   def foods_search(query) 
-    get_url("/3/movie/top_rated")
+    get_url("/fdc/v1/foods/search?", {query: query})
   end
 
   def conn 
-    Faraday.new(url: "https://api.nal.usda.gov/fdc/") do |faraday|
-      faraday.params[:api_key] = ENV["MOVIE_DATABASE_KEY"]
+    Faraday.new(url: "https://api.nal.usda.gov") do |faraday|
+      faraday.params[:api_key] = ENV["FDC_DATABASE_KEY"]
     end
   end
 
