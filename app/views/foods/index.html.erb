@@ -1,0 +1,8 @@
+<h1>Results:</h1>
+
+<% @foods.each do |food| %>
+  <%= food.details %>
+  <%= food.brandOwner= %>
+  <%= food.gtinUpc %>
+  <%= food.ingredients %>
+<% end %>
