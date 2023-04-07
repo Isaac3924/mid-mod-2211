@@ -1,21 +1,13 @@
 class Food
-  attr_reader :id,
-              :name
+  attr_reader :gtinUpc,
+              :details,
+              :brandOwner,
+              :ingredients
 
   def initialize(params)
-    @id = params[:id]
-    @name = params[:details]
-  end
-
-  def get_details(details)
-    
-    details_hash = {}
-
-    details_hash[:gtinUpc] = details[:gtinUpc]
-    details_hash[:details] = details[:details]
-    details_hash[:brandOwner] = details[:brandOwner]
-    details_hash[:ingredients] = details[:ingredients]
-
-    details_hash
+    @gtinUpc = params[:gtinUpc]
+    @details = params[:description]
+    @brandOwner = params[:brandOwner]
+    @ingredients = params[:ingredients]
   end
 end
