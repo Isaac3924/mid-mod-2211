@@ -1,9 +1,12 @@
 <h1>Results:</h1>
 <p>Total hits: <%= @total_hits %></p>
 
-<%# <% @foods.each do |food| %> %>
-  <%# <%= food.details %> %>
-  <%# <%= food.brandOwner= %> %>
-  <%# <%= food.gtinUpc %> %>
-  <%# <%= food.ingredients %> %>
-<%# <% end %> %>
+<section class="food_list">
+  <ul>
+    <% @foods.each do |food| %>
+      <li> 
+        <p><%= food.gtinUpc %>, <%= food.details %>, <%= food.brandOwner %>, <%= food.ingredients %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>
