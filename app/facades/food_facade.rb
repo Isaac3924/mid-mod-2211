@@ -7,14 +7,21 @@ class FoodFacade
 
   def search_call
     parsed_food_search = service.foods_search(@search)
+  end
 
-    
-    @total_hits = parsed_food_search[:totalHits]
-    
-    @results = parsed_food_search[:foods].map do |result|
+  def total_hits
+    total_hits = search_call[:totalHits]
+  end
+
+  def get_food
+    foods = search_call[:foods].map do |result|
       Food.new(result)
     end
-  end[0..10]
+    # require 'pry'; binding.pry
+    # @results = parsed_food_search[:foods].map do |result|
+    #   Food.new(result)
+    # end
+  end
 
   def service 
      @_service ||= FdcService.new
