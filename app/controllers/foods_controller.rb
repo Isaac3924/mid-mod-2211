@@ -3,6 +3,5 @@ class FoodsController < ApplicationController
     facade = FoodFacade.new(params[:q])
     @total_hits = facade.total_hits
     @foods = facade.get_food
-    # require 'pry'; binding.pry
   end
 end
