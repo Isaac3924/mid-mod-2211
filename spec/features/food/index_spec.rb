@@ -40,6 +40,19 @@ RSpec.describe "Food Index Page" do
 
     within(".food_list") do
       expect(page).to have_selector("li", count: 10)
+    end   
+  end
+
+  it "I fill in the search form with 'sweet potatoes' and click 'search' I should see related items returned with its attributes ifthey have them" do 
+      
+    within(".search-field") do
+      fill_in(:q, with: "sweet potatoes")
+      click_button("Search")
+    end
+
+    expect(current_path).to eq(foods_path)
+
+    within(".food_list") do
       expect(page).to have_content("8901020020844, SWEET POTATOES, NOT A BRANDED ITEM, ORGANIC SWEET POTATOES.")
       expect(page).to have_content("826561500014, SWEET POTATOES, Spring Acres Sales Company Inc.,")
       expect(page).to have_content("638882125773, SWEET POTATOES, Stahlbush Island Farms, Inc., SWEET POTATOES.")
