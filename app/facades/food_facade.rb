@@ -17,10 +17,6 @@ class FoodFacade
     foods = search_call[:foods].map do |result|
       Food.new(result)
     end
-    # require 'pry'; binding.pry
-    # @results = parsed_food_search[:foods].map do |result|
-    #   Food.new(result)
-    # end
   end
 
   def service 
