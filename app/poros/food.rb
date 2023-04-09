@@ -5,9 +5,9 @@ class Food
               :ingredients
 
   def initialize(params)
-    @gtinUpc = params[:gtinUpc]
-    @details = params[:description]
-    @brandOwner = params[:brandOwner]
-    @ingredients = params[:ingredients]
+    gtinUpc = params[:gtinUpc]
+    details = params[:description]
+    brandOwner = params[:brandOwner]
+    ingredients = params[:ingredients]
   end
 end
