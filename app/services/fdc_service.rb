@@ -1,6 +1,6 @@
 class FdcService 
   def foods_search(query) 
-    get_url("/fdc/v1/foods/search?", {query: query})
+    get_url("/fdc/v1/foods/search?&pageSize=10", {query: query})
   end
 
   def conn 

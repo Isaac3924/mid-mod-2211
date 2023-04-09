@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   def index
     facade = FoodFacade.new(params[:q])
-    @foods = facade.search_call
-    require 'pry'; binding.pry
+    @total_hits = facade.total_hits
+    @foods = facade.get_food
   end
 end
